@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA VI MAKE.FUN EDITION</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 675px;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #8B0D8B, #FF6600);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Retro sun */
+        .sun {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #FF9900, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .sun::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                #FF9900,
+                #FF9900 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        /* City skyline - replaced with inline SVG pinned to bottom */
+        .skyline {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 140px;
+            width: 100%;
+            background-color: #1a1a1a;
+            opacity: 0.85;
+            preserveAspectRatio="none";
+        }
+        
+        .skyline svg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 140px;
+            overflow: visible;
+        }
+        
+        /* GTA VI logo */
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .gta-vi {
+            font-size: 100px;
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            background: linear-gradient(to right, #C0C0C0, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .make-fun {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: italic;
+            color: #FF9900;
+            margin-top: 10px;
+        }
+        
+        /* Loading bar */
+        .loading-container {
+            position: absolute;
+            left: 460px;
+            top: 400px;
+            width: calc(100% - 520px);
+            text-align: left;
+        }
+        
+        .loading-bar {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background: #333;
+            border: 2px solid #FF9900;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .loading-fill {
+            width: 2%;
+            height: 100%;
+            background: linear-gradient(to right, #FF9900, #FF0000);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .loading-text {
+            margin-top: 18px;
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            white-space: nowrap;
+        }
+        
+        /* Progress caption */
+        .progress {
+            position: absolute;
+            top: 80px;
+            left: 40px;
+            width: 300px;
+            color: white;
+            font-size: 18px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.5;
+        }
+        
+/* Ghost mascot */
+        .ghost {
+            position: absolute;
+            left: 45px;
+            bottom: 120px;
+            width: 190px;
+            z-index: 10;
+        }
+
+        .ghost img {
+            width: 190px;
+            height: auto;
+        }
+
+        /* Bench-like line under ghost */
+        .bench {
+            position: absolute;
+            left: 30px;
+            width: 240px;
+            bottom: 105px;
+            height: 3px;
+            background: white;
+            opacity: 0.3;
+        }
+        
+        /* Tag */
+        .tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    
+    <div class="logo">
+        <div class="gta-vi">GTA VI</div>
+        <div class="make-fun">MAKE.FUN EDITION</div>
+    </div>
+    
+    <div class="progress">
+        loading progress sejak 2013: masih 2% — sambil nunggu, agent-ku ngejar $500
+    </div>
+    
+    <div class="loading-container">
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
+        <div class="loading-text">LOADING… DO NOT TURN OFF YOUR AGENT</div>
+    </div>
+    
+    <div class="ghost">
+        <img src="makefun-icon-transparent.png" alt="make.fun ghost mascot">
+    </div>
+    
+    <div class="bench"></div>
+
+    <div class="skyline">
+        <svg width="100%" height="140" viewBox="0 0 1200 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <rect x="30" y="10" width="60" height="40" fill="#333"/>
+            <rect x="100" y="70" width="80" height="30" fill="#333"/>
+            <rect x="190" y="20" width="100" height="60" fill="#333"/>
+            <rect x="300" y="80" width="70" height="35" fill="#333"/>
+            <rect x="380" y="10" width="90" height="40" fill="#333"/>
+            <rect x="480" y="50" width="60" height="45" fill="#333"/>
+            <rect x="550" y="80" width="85" height="25" fill="#333"/>
+            <rect x="645" y="30" width="75" height="50" fill="#333"/>
+            <rect x="730" y="60" width="65" height="40" fill="#333"/>
+            <rect x="805" y="20" width="80" height="55" fill="#333"/>
+            <rect x="895" y="90" width="90" height="30" fill="#333"/>
+            <rect x="1005" y="50" width="70" height="45" fill="#333"/>
+            <rect x="1085" y="70" width="60" height="40" fill="#333"/>
+            <rect x="1155" y="30" width="65" height="35" fill="#333"/>
+            <rect x="1240" y="80" width="55" height="40" fill="#333"/>
+        </svg>
+    </div>
+
+    <div class="tag">
+        play make.fun — bounties buat AI agent
+    </div>
+</body>
+</html>
